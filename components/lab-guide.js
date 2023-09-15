@@ -3,7 +3,7 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { useContext, useEffect, component } from 'haunted';
 import { LiveLessonDetailsContext, LessonContext, CurriculumContext } from '../contexts.js';
 
-import { serviceHost, lessonSlug, lessonStage } from "../helpers/page-state.js";
+import { lessonSlug, lessonStage } from "../helpers/page-state.js";
 import showdown from 'showdown';
 import debounce from '../helpers/debounce.js';
 import getComponentStyleSheetURL from '../helpers/stylesheet';

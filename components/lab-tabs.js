@@ -1,7 +1,6 @@
 import { html } from 'lit-html';
 import { component, useContext, useEffect } from 'haunted';
 import { LabTabsContext, LiveLessonDetailsContext } from '../contexts.js';
-// import { serviceHost } from '../helpers/page-state.js';
 import getComponentStyleSheetURL from '../helpers/stylesheet';
 
 // NOTE: On Tab State Management:
