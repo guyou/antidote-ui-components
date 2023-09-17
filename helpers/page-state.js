@@ -1,17 +1,7 @@
-export const [serviceHost, acoreServiceRoot, sshServiceHost] = (() => {
-
-  // Since sshUrl is now configurable, the default case works for both production and
-  // selfmedicate. However, more tweaks may be needed.
+export const [acoreServiceRoot, sshServiceHost] = (() => {
   const sshUrl = window.WEBSSH2_LOCATION || 'http://'+window.location.host+':30010'
-  switch (window.ENVIRONMENT) {
-    case "mock":
-      return [`${window.location.protocol}//127.0.0.1:8086`, `${window.location.protocol}//127.0.0.1:8086`, sshUrl];
-    case "self-medicate":
-      return [`${window.location.protocol}//antidote-local:30001`, `${window.location.protocol}//antidote-local:30001/acore`, sshUrl];
-    case "production":
-    default:
-      return [window.location.origin, window.location.origin+'/acore', sshUrl];
-  }
+  const acoreUrl = window.ACORE_LOCATION || window.location.origin+'/acore'
+  return [acoreUrl, sshUrl];
 })();
 
 // get params from page url query parameters
